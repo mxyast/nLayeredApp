@@ -20,10 +20,10 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] CreateProductRequest createProductRequest)
+        public void Add([FromBody] CreateProductRequest createProductRequest)
         {
-            var result = await _productService.Add(createProductRequest); 
-            return Ok(result); 
+             _productService.Add(createProductRequest); 
+          
         }
 
         [HttpGet]
